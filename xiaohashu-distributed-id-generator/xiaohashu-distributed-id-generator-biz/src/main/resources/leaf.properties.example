@@ -1,0 +1,15 @@
+# 美团 Leaf 配置模板
+# 使用方式：复制一份并重命名为 leaf.properties（与本项目放在同一目录），
+# 再填入你自己的数据库信息。leaf.properties 已被 .gitignore 忽略，不会提交到仓库。
+# 注意：该文件由 Leaf 框架自行加载，不走 Spring 的环境变量占位符。
+
+leaf.name=com.sankuai.leaf.opensource.test
+leaf.segment.enable=true
+leaf.jdbc.url=jdbc:mysql://127.0.0.1:3306/leaf?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+leaf.jdbc.username=root
+leaf.jdbc.password=填写你的数据库密码
+
+
+leaf.snowflake.enable=true
+leaf.snowflake.zk.address=127.0.0.1:2181
+leaf.snowflake.port=2222

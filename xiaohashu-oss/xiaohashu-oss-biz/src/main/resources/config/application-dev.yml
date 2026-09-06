@@ -1,0 +1,15 @@
+#=================================================================
+# 对象存储配置
+#=================================================================
+storage:
+  minio:
+    endpoint: http://127.0.0.1:9000
+    accessKey: quanxiaoha
+    secretKey: quanxiaoha
+    bucket: xiaohashu
+  aliyun-oss:
+    # OSS 服务的访问域名，请根据实际使用的 OSS 区域替换为对应的 endpoint
+    endpoint: oss-cn-beijing.aliyuncs.com
+    accessKey: ${ALIYUN_ACCESS_KEY_ID:} # 通过环境变量注入，勿将真实密钥提交到仓库
+    secretKey: ${ALIYUN_ACCESS_KEY_SECRET:}
+    bucket: xiaohashu-www
