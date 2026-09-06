@@ -132,6 +132,9 @@ xiaohashu (根聚合工程)
 
 ### 1. 克隆项目
 
+```bash
+git clone https://github.com/dabiaoge252/UT-Community.git
+```
 
 ### 2. 准备中间件
 
