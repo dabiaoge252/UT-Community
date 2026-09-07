@@ -29,7 +29,7 @@ public class UserIndex {
     public static final String FIELD_USER_AVATAR = "avatar";
 
     /**
-     * 小哈书ID
+     * 工大社区ID
      */
     public static final String FIELD_USER_XIAOHASHU_ID = "xiaohashu_id";
 

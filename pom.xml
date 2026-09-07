@@ -11,7 +11,7 @@
   <!-- 项目名称 -->
   <name>${project.artifactId}</name>
   <!-- 项目描述 -->
-  <description>小哈书（仿小红书），基于 Spring Cloud Alibaba 微服务架构</description>
+  <description>工大社区（仿小红书），基于 Spring Cloud Alibaba 微服务架构</description>
 
   <!-- 多模块项目需要配置打包方式为 pom -->
   <packaging>pom</packaging>

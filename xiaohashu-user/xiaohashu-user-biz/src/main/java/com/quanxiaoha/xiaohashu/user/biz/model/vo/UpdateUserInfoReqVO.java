@@ -31,7 +31,7 @@ public class UpdateUserInfoReqVO {
     private String nickname;
 
     /**
-     * 小哈书 ID
+     * 工大社区 ID
      */
     private String xiaohashuId;
 

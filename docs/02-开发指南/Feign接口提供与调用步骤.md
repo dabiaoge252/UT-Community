@@ -244,7 +244,7 @@ public class UserController {               // 控制层：负责"接收请求 �
 **做什么**：`UserService` / `UserServiceImpl` 完成真正的业务逻辑。
 **为什么**：Controller 只负责"接电话"，业务规则（怎么注册、怎么查、怎么改密码）放 Service 层，职责清晰。
 
-`UserServiceImpl` 完成的实际业务包括：注册时生成小哈书号/默认昵称、分配默认角色、按手机号查用户、更新密码，最终**落库到 MySQL**（通过 MyBatis 的 Mapper 执行 SQL）。
+`UserServiceImpl` 完成的实际业务包括：注册时生成工大社区号/默认昵称、分配默认角色、按手机号查用户、更新密码，最终**落库到 MySQL**（通过 MyBatis 的 Mapper 执行 SQL）。
 
 ### 步骤 7：biz 模块 pom 依赖 api 模块
 

@@ -15,7 +15,7 @@
 
     <artifactId>xiaohashu-auth</artifactId>
     <name>${project.artifactId}</name>
-    <description>小哈书：认证服务（负责处理用户登录、注册、账号注销等）</description>
+    <description>工大社区：认证服务（负责处理用户登录、注册、账号注销等）</description>
 
     <dependencies>
         <!-- ====================== Web 服务（提供 HTTP 接口） ====================== -->

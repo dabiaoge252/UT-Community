@@ -107,7 +107,7 @@ public class UserServiceImpl implements UserService {
         }
 
         // 否则注册新用户
-        // RPC: 调用分布式 ID 生成服务生成小哈书 ID
+        // RPC: 调用分布式 ID 生成服务生成工大社区 ID
         String xiaohashuId = distributedIdGeneratorRpcService.getXiaohashuId();
         // RPC: 调用分布式 ID 生成服务生成用户 ID
         String userIdStr = distributedIdGeneratorRpcService.getUserId();
@@ -190,7 +190,7 @@ public class UserServiceImpl implements UserService {
             needUpdate = true;
         }
 
-        // 小哈书号
+        // 工大社区号
         String xiaohashuId = updateUserInfoReqVO.getXiaohashuId();
         if (StringUtils.isNotBlank(xiaohashuId)) {
             Preconditions.checkArgument(ParamUtils.checkXiaohashuId(xiaohashuId), ResponseCodeEnum.XIAOHASHU_ID_VALID_FAIL.getErrorMessage());

@@ -10,7 +10,7 @@
 | 数据 / 字段 | 类型 | 存储位置 | 由谁生成 | 代码位置 |
 |------------|------|---------|---------|---------|
 | 用户 ID（`t_user.id`） | `BIGINT` / `Long` | MySQL | Leaf **号段**服务（`leaf-segment-user-id`） | [UserServiceImpl.register](file:///d:/java/xiaohashu/xiaohashu/xiaohashu-user/xiaohashu-user-biz/src/main/java/com/quanxiaoha/xiaohashu/user/biz/service/impl/UserServiceImpl.java#L90-L94) |
-| 小哈书号（`t_user.xiaohashu_id`） | `VARCHAR` / `String`（数字串） | MySQL | Leaf **号段**服务（`leaf-segment-xiaohashu-id`） | 同上 |
+| 工大社区号（`t_user.xiaohashu_id`） | `VARCHAR` / `String`（数字串） | MySQL | Leaf **号段**服务（`leaf-segment-xiaohashu-id`） | 同上 |
 | 角色 / 权限 / 用户角色关联表主键 | `BIGINT` / `Long` | MySQL | 手工维护 / 自增 | `RoleDO`、`PermissionDO`、`UserRoleDO`、`RolePermissionDO` |
 | 笔记 ID（`t_note.id`） | `BIGINT` / `Long` | MySQL | Leaf **雪花**服务（`getSnowflakeId`） | [NoteServiceImpl.publishNote](file:///d:/java/xiaohashu/xiaohashu/xiaohashu-note/xiaohashu-note-biz/src/main/java/com/quanxiaoha/xiaohashu/note/biz/service/impl/NoteServiceImpl.java#L101) |
 | 笔记创建者 / 话题（`creator_id` / `topic_id`） | `BIGINT` / `Long` | MySQL | 用户 ID（上下文）/ 手工 | `NoteDO` |
@@ -105,6 +105,6 @@
 ## 六、注意事项（当前代码里的几个观察点）
 
 1. **kv 服务 DTO 已统一用 `uuid` 字段**（新增/查询/删除均为 String，服务端 `UUID.fromString` 转换），语义一致。
-2. **小哈书号虽是 String，内容实为数字**（Leaf 号段生成），`ParamUtils.checkXiaohashuId` 已按"数字/字母/下划线"格式校验；它不是主键，仅是用户可自定义的展示号。
+2. **工大社区号虽是 String，内容实为数字**（Leaf 号段生成），`ParamUtils.checkXiaohashuId` 已按"数字/字母/下划线"格式校验；它不是主键，仅是用户可自定义的展示号。
 3. **note 服务调雪花接口时 key 传的是固定字符串 `"test"`**，雪花模式下 key 本身不参与 ID 计算（仅日志/路由用），后续若需要按业务区分可换成具体业务标识。
 4. 若未来 MySQL 需要**分库分表**，现有 Long 型 ID（Leaf）天然支持，无需改造；这也正是当初不用 DB 自增 + 不用 UUID 的原因之一。

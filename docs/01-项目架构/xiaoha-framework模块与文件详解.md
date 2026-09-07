@@ -20,7 +20,7 @@
 
 ## 一、整体定位与模块依赖关系
 
-`xiaoha-framework` 是整个项目（小哈书）的**平台基础设施层**，职责是"封装常用功能，供各个业务线拿来即用"。它是一个 `packaging=pom` 的聚合工程，本身不写业务代码，只聚合 4 个子模块：
+`xiaoha-framework` 是整个项目（工大社区）的**平台基础设施层**，职责是"封装常用功能，供各个业务线拿来即用"。它是一个 `packaging=pom` 的聚合工程，本身不写业务代码，只聚合 4 个子模块：
 
 ```
 xiaoha-framework/  (聚合工程, packaging=pom)
@@ -121,7 +121,7 @@ xiaoha-common/src/main/java/com/quanxiaoha/framework/common/
 |------|------|----------|
 | [JsonUtils.java](file:///d:/java/xiaohashu/xiaohashu/xiaoha-framework/xiaoha-common/src/main/java/com/quanxiaoha/framework/common/util/JsonUtils.java) | 静态 JSON 工具类（基于 Jackson）。默认忽略未知属性、忽略空 Bean、注册 `JavaTimeModule`。**关键设计：`init(ObjectMapper)` 允许被 Jackson Starter 注入统一配置的 ObjectMapper 覆盖默认实例**，保证全局序列化行为一致。 | `toJsonString(obj)` 对象转 JSON；`parseObject(json, clazz)` JSON 转对象；`parseMap(...)` 转 Map；`parseList(...)` 转 List。 |
 | [DateUtils.java](file:///d:/java/xiaohashu/xiaohashu/xiaoha-framework/xiaoha-common/src/main/java/com/quanxiaoha/framework/common/util/DateUtils.java) | 日期工具类 | `localDateTime2Timestamp(LocalDateTime)` 按 UTC 转毫秒时间戳。 |
-| [ParamUtils.java](file:///d:/java/xiaohashu/xiaohashu/xiaoha-framework/xiaoha-common/src/main/java/com/quanxiaoha/framework/common/util/ParamUtils.java) | 参数校验工具类 | `checkNickname(nickname)` 昵称 2~24 位且不含特殊字符；`checkXiaohashuId(id)` 小哈书号 6~15 位且仅含字母数字下划线；`checkLength(str, length)` 通用长度校验。 |
+| [ParamUtils.java](file:///d:/java/xiaohashu/xiaohashu/xiaoha-framework/xiaoha-common/src/main/java/com/quanxiaoha/framework/common/util/ParamUtils.java) | 参数校验工具类 | `checkNickname(nickname)` 昵称 2~24 位且不含特殊字符；`checkXiaohashuId(id)` 工大社区号 6~15 位且仅含字母数字下划线；`checkLength(str, length)` 通用长度校验。 |
 
 ### 2.6 validator 参数校验包（JSR-303 自定义校验器）
 
